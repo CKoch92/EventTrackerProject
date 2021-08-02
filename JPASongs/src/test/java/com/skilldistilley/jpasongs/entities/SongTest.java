@@ -45,6 +45,7 @@ class SongTest {
 	void test() {
 		assertNotNull(song);
 		assertEquals("Savage", song.getTitle());
+		assertEquals(2.58, song.getLength());
 	}
 
 }

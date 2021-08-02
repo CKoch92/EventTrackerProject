@@ -1,5 +1,8 @@
 package com.skilldistilley.jpasongs.entities;
 
+import java.time.LocalDate;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,6 +15,11 @@ public class Song {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String title;
+	private String artist;
+	private String album;
+	@Column(name="release_date")
+	private LocalDate releaseDate;
+	private double length;
 	
 	public Song() {}
 
@@ -30,10 +38,47 @@ public class Song {
 	public void setTitle(String title) {
 		this.title = title;
 	}
+	
+	
+
+	public String getArtist() {
+		return artist;
+	}
+
+	public void setArtist(String artist) {
+		this.artist = artist;
+	}
+
+	public String getAlbum() {
+		return album;
+	}
+
+	public void setAlbum(String album) {
+		this.album = album;
+	}
+
+	public LocalDate getReleaseDate() {
+		return releaseDate;
+	}
+
+	public void setReleaseDate(LocalDate releaseDate) {
+		this.releaseDate = releaseDate;
+	}
+
+	public double getLength() {
+		return length;
+	}
+
+	public void setLength(double length) {
+		this.length = length;
+	}
+
+
 
 	@Override
 	public String toString() {
-		return "Song [id=" + id + ", title=" + title + "]";
+		return "Song [id=" + id + ", title=" + title + ", artist=" + artist + ", album=" + album + ", releaseDate="
+				+ releaseDate + ", length=" + length + "]";
 	}
 
 	@Override
