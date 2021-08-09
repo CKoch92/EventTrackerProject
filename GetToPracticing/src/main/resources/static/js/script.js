@@ -71,6 +71,7 @@ function displaySongs(songs) {
 		count++;
 		totalTime += song.length;
 	}
+	let tableDiv = document.getElementById('songListDiv');
 	let totalButton = document.createElement('button');
 	totalButton.name = 'total songs';
 	totalButton.textContent = 'total songs';
@@ -87,9 +88,10 @@ function displaySongs(songs) {
 	li.textContent = 'Total length of all songs: ' + totalTime;
 	ul.appendChild(li);
 	});
-	let row = document.createElement('tr');
-	row.appendChild(totalButton);
-	table.appendChild(row);
+	tableDiv.appendChild(totalButton);
+	// let row = document.createElement('tr');
+	// row.appendChild(totalButton);
+	// table.appendChild(row);
 }
 
 function createSong(song){
@@ -159,15 +161,15 @@ function createSong(song){
 		td.textContent = song.length;
 		tr.appendChild(td);
 		table.appendChild(tr);
-		let editButton = document.createElement('button');
-		editButton.name = 'details';
-		editButton.textContent = 'details';
-		editButton.value = song.id;
-		editButton.addEventListener('click', function(e){
+		let newEditButton = document.createElement('button');
+		newEditButton.name = 'details';
+		newEditButton.textContent = 'details';
+		newEditButton.value = song.id;
+		newEditButton.addEventListener('click', function(e){
 			e.preventDefault();
 			displayEditSong(song);
 		});
-		tr.appendChild(editButton);
+		tr.appendChild(newEditButton);
 		table.appendChild(tr);
   }
 
