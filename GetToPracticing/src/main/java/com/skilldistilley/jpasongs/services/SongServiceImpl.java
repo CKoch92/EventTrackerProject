@@ -53,6 +53,17 @@ public class SongServiceImpl implements SongService {
 		return successfulRemove;
 	}
 	
+	public int songCount() {
+		return allSongs().size();
+	}
 	
+	public int totalTime() {
+		List<Song> songs = allSongs();
+		int time = 0;
+		for (Song song : songs) {
+			time += song.getLength();
+		}
+		return time;
+	}
 
 }

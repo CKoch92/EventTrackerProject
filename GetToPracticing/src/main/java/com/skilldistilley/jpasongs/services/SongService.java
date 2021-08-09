@@ -11,5 +11,6 @@ public interface SongService {
 	Song create(Song song);
 	Song update(Song song);
 	boolean delete(int id);
-
+	int songCount();
+	int totalTime();
 }

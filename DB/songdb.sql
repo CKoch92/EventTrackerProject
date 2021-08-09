@@ -54,8 +54,6 @@ INSERT INTO `song` (`id`, `title`, `artist`, `album`, `release_date`, `length`) 
 INSERT INTO `song` (`id`, `title`, `artist`, `album`, `release_date`, `length`) VALUES (6, 'Welcome to Paradise', 'Green Day', 'Dookie', '1994-02-01', 3.73);
 INSERT INTO `song` (`id`, `title`, `artist`, `album`, `release_date`, `length`) VALUES (7, 'While My Guitar Gently Weeps', 'The Beatles', 'The Beatles (white album)', '1968-11-22', 4.77);
 INSERT INTO `song` (`id`, `title`, `artist`, `album`, `release_date`, `length`) VALUES (8, 'Thunderstruck', 'AC/DC', 'The Razor\'s Edge', '1990-09-10', 4.87);
-INSERT INTO `song` (`id`, `title`, `artist`, `album`, `release_date`, `length`) VALUES (9, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `song` (`id`, `title`, `artist`, `album`, `release_date`, `length`) VALUES (10, NULL, NULL, NULL, NULL, NULL);
 
 COMMIT;
 
