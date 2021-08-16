@@ -1,6 +1,7 @@
 # EventTrackerProject
 
 ## Full-Stack Spring/REST/JPA Project for Skill Distillery
+![image](https://user-images.githubusercontent.com/83372104/129575746-c5cb8811-1da9-46f7-9ce7-5b95cca87c4d.png)
 
 ## Overview
 Event Tracker is a way for musicians to track their practice schedule when rehearsing or learning songs from a given setlist.
