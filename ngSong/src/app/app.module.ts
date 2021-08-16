@@ -9,11 +9,13 @@ import { AppComponent } from './app.component';
 import { SongService } from './services/song.service';
 import { SongListComponent } from './components/song-list/song-list.component';
 import { AuthService } from './services/auth.service';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SongListComponent
+    SongListComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
