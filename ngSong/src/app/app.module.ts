@@ -10,12 +10,14 @@ import { SongService } from './services/song.service';
 import { SongListComponent } from './components/song-list/song-list.component';
 import { AuthService } from './services/auth.service';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SongListComponent,
-    NavigationComponent
+    NavigationComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
