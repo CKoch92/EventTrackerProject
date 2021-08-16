@@ -4,13 +4,15 @@ import { catchError, tap } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { Song } from '../models/song';
 import { AuthService } from './auth.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SongService {
 
-  baseUrl = 'http://localhost:8084/';
+  // baseUrl = 'http://localhost:8084/';
+  baseUrl = environment.baseUrl;
   url = this.baseUrl + 'api/songs';
 
   constructor(
@@ -47,7 +49,7 @@ export class SongService {
         },
       };
 
-      return this.http.post<Song>('http://localhost:8084/api/songs', song, this.getHttpOptions())
+      return this.http.post<Song>(this.url, song, this.getHttpOptions())
         .pipe(
           catchError(this.handleError)
         );
@@ -61,7 +63,7 @@ export class SongService {
 
     public update(song: Song){
 
-      return this.http.put<Song>('http://localhost:8084/api/songs', song, this.getHttpOptions())
+      return this.http.put<Song>(this.url, song, this.getHttpOptions())
       .pipe(
         catchError(this.handleError)
       );
@@ -70,6 +72,6 @@ export class SongService {
 
     public destroy(id: number){
 
-      return this.http.delete<Song>('http://localhost:8084/api/songs/'+ id, this.getHttpOptions());
+      return this.http.delete<Song>(this.url +'/'+ id, this.getHttpOptions());
     }
 }
