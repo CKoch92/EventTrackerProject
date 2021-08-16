@@ -5,7 +5,7 @@
 	<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     
    <!-- list entities here -->
-    <class>com.skilldistillery.jpasongs.entities.Song</class>
+    <class>com.skilldistilley.jpasongs.entities.Song</class>
    <!-- end list entities -->
     
 		<properties>

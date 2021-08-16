@@ -1,0 +1,64 @@
+<div id = 'songTable' *ngIf = "!newSong && !selected">
+  <table class="table table-striped table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th>Artist</th>
+        <th>Title</th>
+        <th>Album</th>
+        <th>Release Date</th>
+        <th>Length</th>
+        <th>Remove?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let song of songs">
+        <td (click)="displaySong(song)">{{song.artist}}</td>
+        <td>{{song.title}}</td>
+        <td>{{song.album}}</td>
+        <td>{{song.releaseDate}}</td>
+        <td>{{song.length}}</td>
+        <td><input type="submit" name = "delete" value = "X" (click)="deleteSong(song.id)"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <form>
+    <button (click)="openAddSongForm()">Add Song</button>
+  </form>
+  </div>
+
+  <div *ngIf = 'newSong'>
+    <h3>Enter the Song Details Below: </h3> <br>
+    <input type="text" name="artist" placeholder="Artist" [(ngModel)]="newSong.artist" /> <br>
+    <input type="text" name="title" placeholder="Title" [(ngModel)]="newSong.title" /> <br>
+    <input type="text" name="album" placeholder="Album" [(ngModel)]="newSong.album" /> <br>
+    <input type="date" name="releaseDate" placeholder="Release Date" [(ngModel)]="newSong.releaseDate" /> <br>
+    <input type="number" name="length" placeholder="length" [(ngModel)]="newSong.length" /> <br>
+    <button (click)="newSong = null">Cancel</button>
+    <button (click)="addSong(newSong)">Submit</button>
+  </div>
+
+  <div id='songDetails' *ngIf = "selected && !editSong">
+    <hr>
+    ID: {{selected.id}} <br>
+    Artist: {{selected.artist}} <br>
+    Title: {{selected.title}} <br>
+    Album: {{selected.album}} <br>
+    Release Date: {{selected.releaseDate}} <br>
+    Length: {{selected.length}} <br>
+    <button (click)="setEditSong()">Edit Details</button>
+    <button (click)="selected = null">Close Details</button>
+  </div>
+
+  <div id='editTodoDetails' *ngIf = "editSong">
+    <form>
+      Artist: <input type="text" name="artist" placeholder={{editSong.artist}} [(ngModel)]="editSong.artist" /> <br>
+      Title: <input type="text" name="title" placeholder={{editSong.title}} [(ngModel)]="editSong.title" /> <br>
+      Album: <input type="text" name="album" placeholder={{editSong.album}} [(ngModel)]="editSong.album" /> <br>
+      Release Date: <input type="date" name="album" placeholder={{editSong.releaseDate}} [(ngModel)]="editSong.releaseDate" /> <br>
+      Length: <input type="number" name="length" placeholder={{editSong.length}} [(ngModel)]="editSong.length" /> <br>
+      <input type='submit' name = 'cancel' value='cancel' (click)="editSong = null"/>
+      <input type='submit' name = 'save' value= 'save' (click)="updateSong(editSong)"/>
+    </form>
+
+  </div>
